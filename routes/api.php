@@ -13,6 +13,24 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('me', function(Request $request) {
+        return $request->user();
+    });
+
+    //teacher stuff
+    Route::group(['prefix' => 'teacher', 'namespace' => 'Teacher'], function() {
+        Route::get('lectures', 'LectureController@index');
+        Route::post('lectures', 'LectureController@store');
+        Route::get('quizzes', 'QuizController@index');
+        Route::post('quizzes', 'QuizController@store');
+    });
+
+    //student stuff
+    Route::group(['prefix' => 'student', 'namespace' => 'Student'], function() {
+        Route::get('lectures', 'LectureController@index');
+        Route::get('quizzes', 'QuizController@index');
+        Route::get('quizzes/{quiz}', 'QuizController@show');
+        Route::put('quizzes/{quiz}', 'QuizController@update');
+    });
 });
