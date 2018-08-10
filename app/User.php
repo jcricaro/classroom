@@ -59,4 +59,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Answer::class, 'student_id', 'id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
 }
