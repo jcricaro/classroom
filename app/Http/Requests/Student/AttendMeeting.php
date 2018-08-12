@@ -13,7 +13,7 @@ class AttendMeeting extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class AttendMeeting extends FormRequest
     public function rules()
     {
         return [
-            //
+            'code' => ['required', function($attribute, $value, $fail) {
+                if($value !== $this->meeting->code) {
+                    return $fail($attribute . ' is invalid.');
+                }
+            }]
         ];
     }
 }

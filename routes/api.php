@@ -33,6 +33,8 @@ Route::group(['middleware' => 'auth:api'], function() {
         Route::get('quizzes', 'QuizController@index');
         Route::get('quizzes/{quiz}', 'QuizController@show');
         Route::put('quizzes/{quiz}', 'QuizController@update');
-
+        Route::get('attendances', 'AttendanceController@index');
+        Route::get('meetings', 'MeetingController@index');
+        Route::post('meetings/{meeting}', 'MeetingController@store');
     });
 });

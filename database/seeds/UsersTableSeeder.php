@@ -27,6 +27,10 @@ class UsersTableSeeder extends Seeder
             'user_type' => 'teacher'
         ]);
 
+        $meeting = $teacher->meetings()->create([
+            'code' => 'test'
+        ]);
+
         $quiz = $teacher->quizzes()->create([
             'title' => 'Test quiz 1',
             'time_limit' => '60',

@@ -654,4 +654,73 @@ __Sample Response__
 }
 ```
 ### Attendance
-#### 1. Check-in
+#### 1. Get List
+__Endpoint__
+
+```
+GET /api/student/meetings
+```
+
+__Sample Response__
+```json
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "teacher_id": 1,
+            "code": "test",
+            "created_at": "2018-08-12 07:44:13",
+            "updated_at": "2018-08-12 07:44:13",
+            "teacher": {
+                "id": 1,
+                "name": "John Doe",
+                "email": "johndoe@mail.com",
+                "user_type": "teacher",
+                "created_at": "2018-08-12 07:44:13",
+                "updated_at": "2018-08-12 07:44:13"
+            }
+        }
+    ],
+    "first_page_url": "http://127.0.0.1:8000/api/student/meetings?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http://127.0.0.1:8000/api/student/meetings?page=1",
+    "next_page_url": null,
+    "path": "http://127.0.0.1:8000/api/student/meetings",
+    "per_page": 15,
+    "prev_page_url": null,
+    "to": 1,
+    "total": 1
+}
+```
+
+2. Attend Meeting
+
+__Endpoint__
+
+```
+POST /api/student/meetings/{meeting}/attend
+```
+
+__Sample Request__
+```json
+{
+	"code" : "test"
+}
+```
+
+__Sample Response__
+```json
+{
+    "data": {
+        "user_id": 2,
+        "is_late": false,
+        "meeting_id": 1,
+        "updated_at": "2018-08-12 08:56:35",
+        "created_at": "2018-08-12 08:56:35",
+        "id": 2
+    },
+    "message": "created"
+}
+```
