@@ -102,7 +102,360 @@ __Sample Response__
 }
 ```
 
-### 2. Create Quiz
+### 2. Get Quiz
+__Endpoint__
+```
+GET /api/teacher/quizzes/{quiz}
+```
+
+__Sample Response__
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "teacher_id": 1,
+            "title": "Test quiz 1",
+            "time_limit": 60,
+            "quiz_date": "2018-08-10 00:00:00",
+            "created_at": "2018-08-10 02:17:44",
+            "updated_at": "2018-08-10 02:17:44",
+            "questions": [
+                {
+                    "id": 1,
+                    "quiz_id": 1,
+                    "question": "Question 1",
+                    "choices": {
+                        "a": "choice 1",
+                        "b": "choice 2",
+                        "c": "choice 3",
+                        "d": "choice 4"
+                    },
+                    "answer": "a",
+                    "created_at": "2018-08-10 02:17:44",
+                    "updated_at": "2018-08-10 02:17:44"
+                },
+                {
+                    "id": 2,
+                    "quiz_id": 1,
+                    "question": "Question 2",
+                    "choices": {
+                        "a": "choice 1",
+                        "b": "choice 2",
+                        "c": "choice 3",
+                        "d": "choice 4"
+                    },
+                    "answer": "b",
+                    "created_at": "2018-08-10 02:17:44",
+                    "updated_at": "2018-08-10 02:17:44"
+                },
+                {
+                    "id": 3,
+                    "quiz_id": 1,
+                    "question": "Question 3",
+                    "choices": {
+                        "a": "choice 1",
+                        "b": "choice 2",
+                        "c": "choice 3",
+                        "d": "choice 4"
+                    },
+                    "answer": "a",
+                    "created_at": "2018-08-10 02:17:44",
+                    "updated_at": "2018-08-10 02:17:44"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "teacher_id": 1,
+            "title": "Second Quiz",
+            "time_limit": 45,
+            "quiz_date": "2018-08-10 00:00:00",
+            "created_at": "2018-08-10 02:54:55",
+            "updated_at": "2018-08-10 02:54:55",
+            "questions": [
+                {
+                    "id": 4,
+                    "quiz_id": 2,
+                    "question": "Sample question 1",
+                    "choices": [
+                        {
+                            "a": "t32131est choice"
+                        },
+                        {
+                            "b": "tes232t cfdfdhoice"
+                        },
+                        {
+                            "c": "test choice"
+                        },
+                        {
+                            "d": "test"
+                        }
+                    ],
+                    "answer": "a",
+                    "created_at": "2018-08-10 02:54:55",
+                    "updated_at": "2018-08-10 02:54:55"
+                },
+                {
+                    "id": 5,
+                    "quiz_id": 2,
+                    "question": "Sample question 2",
+                    "choices": [
+                        {
+                            "a": "t32131est choice"
+                        },
+                        {
+                            "b": "tes232t cfdfdhoice"
+                        },
+                        {
+                            "c": "test choice"
+                        },
+                        {
+                            "d": "test"
+                        }
+                    ],
+                    "answer": "a",
+                    "created_at": "2018-08-10 02:54:55",
+                    "updated_at": "2018-08-10 02:54:55"
+                },
+                {
+                    "id": 6,
+                    "quiz_id": 2,
+                    "question": "Question 3",
+                    "choices": [
+                        {
+                            "a": "test choice"
+                        },
+                        {
+                            "b": "Answer B"
+                        },
+                        {
+                            "c": "C"
+                        },
+                        {
+                            "d": "eDi wow"
+                        }
+                    ],
+                    "answer": "c",
+                    "created_at": "2018-08-10 02:54:55",
+                    "updated_at": "2018-08-10 02:54:55"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "teacher_id": 1,
+            "title": "third Quiz",
+            "time_limit": 15,
+            "quiz_date": "2018-08-10 00:00:00",
+            "created_at": "2018-08-10 03:31:25",
+            "updated_at": "2018-08-10 03:31:25",
+            "questions": [
+                {
+                    "id": 7,
+                    "quiz_id": 3,
+                    "question": "Sample question 1",
+                    "choices": [
+                        {
+                            "a": "t32131est choice"
+                        },
+                        {
+                            "b": "tes232t cfdfdhoice"
+                        },
+                        {
+                            "c": "test choice"
+                        },
+                        {
+                            "d": "test"
+                        }
+                    ],
+                    "answer": "a",
+                    "created_at": "2018-08-10 03:31:25",
+                    "updated_at": "2018-08-10 03:31:25"
+                },
+                {
+                    "id": 8,
+                    "quiz_id": 3,
+                    "question": "Sample question 2",
+                    "choices": [
+                        {
+                            "a": "t32131est choice"
+                        },
+                        {
+                            "b": "tes232t cfdfdhoice"
+                        },
+                        {
+                            "c": "test choice"
+                        },
+                        {
+                            "d": "test"
+                        }
+                    ],
+                    "answer": "a",
+                    "created_at": "2018-08-10 03:31:25",
+                    "updated_at": "2018-08-10 03:31:25"
+                },
+                {
+                    "id": 9,
+                    "quiz_id": 3,
+                    "question": "Question 3",
+                    "choices": [
+                        {
+                            "a": "test choice"
+                        },
+                        {
+                            "b": "Answer B"
+                        },
+                        {
+                            "c": "C"
+                        },
+                        {
+                            "d": "eDi wow"
+                        }
+                    ],
+                    "answer": "c",
+                    "created_at": "2018-08-10 03:31:25",
+                    "updated_at": "2018-08-10 03:31:25"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "teacher_id": 1,
+            "title": "third Quiz",
+            "time_limit": 15,
+            "quiz_date": "2018-08-10 00:00:00",
+            "created_at": "2018-08-10 03:53:35",
+            "updated_at": "2018-08-10 03:53:35",
+            "questions": [
+                {
+                    "id": 10,
+                    "quiz_id": 4,
+                    "question": "Sample question 1",
+                    "choices": [
+                        {
+                            "a": "t32131est choice"
+                        },
+                        {
+                            "b": "tes232t cfdfdhoice"
+                        },
+                        {
+                            "c": "test choice"
+                        },
+                        {
+                            "d": "test"
+                        }
+                    ],
+                    "answer": "a",
+                    "created_at": "2018-08-10 03:53:35",
+                    "updated_at": "2018-08-10 03:53:35"
+                },
+                {
+                    "id": 11,
+                    "quiz_id": 4,
+                    "question": "Sample question 2",
+                    "choices": [
+                        {
+                            "a": "t32131est choice"
+                        },
+                        {
+                            "b": "tes232t cfdfdhoice"
+                        },
+                        {
+                            "c": "test choice"
+                        },
+                        {
+                            "d": "test"
+                        }
+                    ],
+                    "answer": "a",
+                    "created_at": "2018-08-10 03:53:35",
+                    "updated_at": "2018-08-10 03:53:35"
+                },
+                {
+                    "id": 12,
+                    "quiz_id": 4,
+                    "question": "Question 3",
+                    "choices": [
+                        {
+                            "a": "test choice"
+                        },
+                        {
+                            "b": "Answer B"
+                        },
+                        {
+                            "c": "C"
+                        },
+                        {
+                            "d": "eDi wow"
+                        }
+                    ],
+                    "answer": "c",
+                    "created_at": "2018-08-10 03:53:35",
+                    "updated_at": "2018-08-10 03:53:35"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "teacher_id": 1,
+            "title": "QUIZ NO. 5",
+            "time_limit": 60,
+            "quiz_date": "2018-08-10 00:00:00",
+            "created_at": "2018-08-10 03:59:15",
+            "updated_at": "2018-08-10 03:59:15",
+            "questions": [
+                {
+                    "id": 13,
+                    "quiz_id": 5,
+                    "question": "Question 1",
+                    "choices": [
+                        {
+                            "a": "String A",
+                            "b": "String B",
+                            "c": "String C",
+                            "d": "String D"
+                        }
+                    ],
+                    "answer": "Answer 1",
+                    "created_at": "2018-08-10 03:59:15",
+                    "updated_at": "2018-08-10 03:59:15"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "teacher_id": 1,
+            "title": "ufufkfkf",
+            "time_limit": 10,
+            "quiz_date": "2018-08-10 00:00:00",
+            "created_at": "2018-08-10 04:16:46",
+            "updated_at": "2018-08-10 04:16:46",
+            "questions": [
+                {
+                    "id": 14,
+                    "quiz_id": 6,
+                    "question": "jfkf",
+                    "choices": [
+                        {
+                            "a": "ifkf",
+                            "b": "jdjd",
+                            "c": "jdjd",
+                            "d": "jdjd"
+                        }
+                    ],
+                    "answer": "d",
+                    "created_at": "2018-08-10 04:16:46",
+                    "updated_at": "2018-08-10 04:16:46"
+                }
+            ]
+        }
+    ]
+}
+```
+
+
+### 3. Create Quiz
 
 __Endpoint__
 ```

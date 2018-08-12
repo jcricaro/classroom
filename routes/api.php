@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth:api'], function() {
         Route::get('lectures', 'LectureController@index');
         Route::post('lectures', 'LectureController@store');
         Route::get('quizzes', 'QuizController@index');
+        Route::get('quizzes/{quiz}', 'QuizController@show');
         Route::post('quizzes', 'QuizController@store');
     });
 

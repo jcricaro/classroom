@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Requests\Teacher\AddQuiz;
+use App\Quiz;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,6 +16,15 @@ class QuizController extends Controller
     public function index(Request $request)
     {
         return response()->json($request->user()->quizzes()->paginate());
+    }
+
+    /**
+     * @param Quiz $quiz
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show(Quiz $quiz)
+    {
+        return response()->json(['data' => $quiz->with('questions')->get()]);
     }
 
     /**
