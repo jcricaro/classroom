@@ -33,6 +33,37 @@ Use `access_token` for other requests as `Authorization header` with format: `Be
 }
 ```
 
+### 2. Registration
+
+__Endpoint__
+```
+POST /api/register
+```
+
+__Sample Request__
+```json
+{
+	"name" : "Jane Doe 2",
+	"email" : "janedoe2@mail.com",
+	"password" : "test",
+	"user_type" : "student"
+}
+```
+
+__Sample Response__
+```json
+{
+    "data": {
+        "email": "janedoe2@mail.com",
+        "name": "Jane Doe 2",
+        "updated_at": "2018-08-13 08:29:52",
+        "created_at": "2018-08-13 08:29:52",
+        "id": 6
+    },
+    "message": "User registered."
+}
+```
+
 ### 2. Get User
 __Endpoint__
 
