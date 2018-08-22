@@ -17,7 +17,7 @@ class CreateAnswersTable extends Migration
             $table->increments('id');
             $table->integer('quiz_id')->unsigned()->index();
             $table->integer('student_id')->unsigned()->index();
-            $table->json('answers');
+            $table->text('answers');
             $table->integer('score');
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->integer('quiz_id')->unsigned()->index();
             $table->string('question');
-            $table->json('choices');
+            $table->text('choices');
             $table->char('answer');
             $table->timestamps();
         });
