@@ -24,7 +24,8 @@ class AddLecture extends FormRequest
     public function rules()
     {
         return [
-            //
+            'file' => 'required|file',
+            'title' => 'required'
         ];
     }
 }

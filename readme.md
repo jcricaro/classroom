@@ -120,6 +120,58 @@ __Sample Reponse__
 }
 
 ```
+#### 2. Create Lecture
+
+File upload works differently, it is done via form upload. Meaning no, content-type: json
+
+__Endpoint__
+```
+POST /api/teacher/lectures
+```
+
+__Sample Request__
+```
+POST /api/teacher/lectures HTTP/1.1
+Host: 127.0.0.1:8000
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjkzNTAwMjI2Y2Q4ZDI1NDc3NmRlYzVmZWRkOGY3YTMyMTk1MDUzOGIyODE3NGU0ZjRjOTljYmM0ODRlM2I0ZGIxZDJkZGE2YjRmMmM4Yjk3In0.eyJhdWQiOiIyIiwianRpIjoiOTM1MDAyMjZjZDhkMjU0Nzc2ZGVjNWZlZGQ4ZjdhMzIxOTUwNTM4YjI4MTc0ZTRmNGM5OWNiYzQ4NGUzYjRkYjFkMmRkYTZiNGYyYzhiOTciLCJpYXQiOjE1MzUyMjY4NzYsIm5iZiI6MTUzNTIyNjg3NiwiZXhwIjoxNTY2NzYyODc2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Npqhxj2vafgXQPnbudnmOE-mBx-g4sgpHF75XScmPYvdyJmQP9HI1nZPb5MHcRbRRN1XoUz3assb0TfMGhEQ_XLZuqzbpu2N7IyCcIOGAHQppIyV7xjYd4-L-Ulg6yL6NzwxLF0eWj3Wc2pMIrG2HEbz6eEKfOcom0vVmxFTJ9GllIfPL3CAaEMPc6dnBF1hMyJ2ePfmcVcTvO-skYd9GtIdJ7O7msvHDbHo5Se-c5uuiyzwSsL8wMUorivA71xUH7HIrqP-WQug5TcXzBcQfPCaUlYxkCKHvt5Ed9HEJjxFVTQcqMsn0EJujj-Mem0JRdqzMZGb6bOPdw5z7q4Vyy1YYKyFx1y9_lVkPUs3bXP02KHlS6HdcEfGmMsgFhBY5i0knmLTo9PNcEfM3h_xHADR7amEBgUtUaha9OJXKMAXG8NVxm6OfPQM9pYo4b_7diEjbBtQZ9X59AElaXYXO7LEQ1Iz7d83a1VGaXkhhUkZdF0TvAQD1a3soTuGKCUYapeHM39Nz5fYbOc7c8uvcSHWS-K-fRi-9T3EGar4K4vydwL4L7JvKQdhlCUGI1QbsBtODt-4aiKZn0r7545EahaONcnE0h7Qyog2kyodiszEn1CjxN3yajcAtfz-vdi0LoHjZH4hjZ7_P-B41kJvPXvy1Aa5JtWCwdpi6bMCLcs
+Cache-Control: no-cache
+Postman-Token: 031d4cb6-e11d-174f-bcbf-79f17da84754
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+Lecture title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+Lecture description
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="38888172_2119387234997334_324454194750685184_n.jpg"
+Content-Type: image/jpeg
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+```
+
+__Sample Response__
+```json
+{
+    "message": "created",
+    "data": {
+        "title": "Lecture title",
+        "description": "Lecture description",
+        "filename": "lectures/W9PeOJGotAbfN04I3XERJeXMaJF5PzlfOsFRRKjT.jpeg",
+        "teacher_id": 1,
+        "updated_at": "2018-08-25 20:05:32",
+        "created_at": "2018-08-25 20:05:32",
+        "id": 2
+    }
+}
+```
+
+
 
 ### Quizzes
 ### 1. Get Quizzes
