@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth:api'], function() {
         Route::get('quizzes', 'QuizController@index');
         Route::get('quizzes/{quiz}', 'QuizController@show');
         Route::post('quizzes', 'QuizController@store');
+        Route::post('meetings', 'MeetingController@store');
     });
 
     //student stuff

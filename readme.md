@@ -94,6 +94,30 @@ GET /api/teacher/lectures
 
 __Sample Reponse__
 ```json
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "teacher_id": 1,
+            "title": "Lecture title",
+            "description": "Lecture description",
+            "filename": "filename.pdf",
+            "created_at": "2018-08-25 19:57:24",
+            "updated_at": "2018-08-25 19:57:24"
+        }
+    ],
+    "first_page_url": "http://127.0.0.1:8000/api/teacher/lectures?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http://127.0.0.1:8000/api/teacher/lectures?page=1",
+    "next_page_url": null,
+    "path": "http://127.0.0.1:8000/api/teacher/lectures",
+    "per_page": 15,
+    "prev_page_url": null,
+    "to": 1,
+    "total": 1
+}
 
 ```
 

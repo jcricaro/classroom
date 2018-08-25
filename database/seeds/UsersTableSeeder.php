@@ -27,6 +27,12 @@ class UsersTableSeeder extends Seeder
             'user_type' => 'teacher'
         ]);
 
+        $lecture = $teacher->lectures()->create([
+            'title' => 'Lecture title',
+            'description' => 'Lecture description',
+            'filename' => 'filename.pdf'
+        ]);
+
         $meeting = $teacher->meetings()->create([
             'code' => 'test'
         ]);
